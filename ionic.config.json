@@ -1,0 +1,7 @@
+{
+  "name": "projeto-unesp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

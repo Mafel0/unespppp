@@ -1,0 +1,50 @@
+<ion-header mode="ios">
+  <ion-toolbar>
+    <ion-title><ion-icon name="person-outline"></ion-icon>PERFIL</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+   
+  <ion-item detail="true" routerLink="informacoes" class="space">
+    <ion-icon name="document-text-outline"></ion-icon>
+    <ion-label>Informações pessoais</ion-label>
+  </ion-item>
+
+  <ion-item detail="true" routerLink="senha">
+    <ion-icon name="lock-closed-outline"></ion-icon>
+    <ion-label>Alterar senha</ion-label>
+  </ion-item>
+
+  <ion-item detail="true" routerLink="termos">
+    <ion-icon name="information-circle-outline"></ion-icon>
+    <ion-label>Termos e privacidade</ion-label>
+  </ion-item>
+
+  <ion-item detail="true" (click)="toggleLeave()" class="space">
+    <ion-icon name="power-outline"></ion-icon>
+    <ion-label>Sair</ion-label>
+  </ion-item>
+
+  <div *ngIf="leave" class="align-container">
+
+    <div class="leave-container">
+
+      <div class="alert-icon">
+        <ion-icon name="alert-circle-outline"></ion-icon>
+      </div>
+
+      <h2>Deseja realmente sair?</h2>
+
+      <p>Ao clicar em sair você será deslogado de sua conta atual!</p>
+
+      <ion-buttons slot="start">
+        <ion-button (click)="toggleLeave()">Cancelar</ion-button>
+        <ion-button (click)="leaveAcount()">Sair</ion-button>
+      </ion-buttons>
+
+    </div>
+
+  </div>
+
+</ion-content>

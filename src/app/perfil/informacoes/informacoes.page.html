@@ -1,0 +1,85 @@
+<ion-header mode="ios">
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+
+    <ion-title><ion-icon name="document-text-outline"></ion-icon>DADOS PESSOAIS</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div *ngIf="showCalendar" class="shadow-align-center">
+    <ion-datetime #datetime presentation="date" [(ngModel)]="calendar" max="{{today}}">
+
+      <ion-buttons slot="buttons">
+        <ion-button color="danger" (click)="eventCalendar()">Cancelar</ion-button>
+        <ion-button color="primary" (click)="eventCalendar(true, datetime)">Confirmar</ion-button>
+      </ion-buttons>
+
+    </ion-datetime>
+  </div>
+
+  <form>
+
+    <ion-list>
+
+      <ion-item>
+        <ion-icon name="person-outline"></ion-icon>
+
+        <ion-input 
+         label="Nome completo" 
+         labelPlacement="stacked" 
+         type="text" 
+         id="name" 
+         name="name"
+         placeholder="Nome completo"
+         [(ngModel)]="form.name"
+         [brmasker]="{userCaracters: false, type: 'alfa'}">
+        </ion-input>
+
+      </ion-item>
+
+      <ion-item  class="space">
+        <ion-icon name="card-outline"></ion-icon>
+        
+        <ion-input 
+         label="CPF"
+         labelPlacement="stacked"
+         id="cpf"
+         name="cpf"
+         type="text"
+         placeholder="CPF"
+         [(ngModel)]="form.cpf"
+         [brmasker]="{mask:'000.000.000-00', type: 'num', len:14}"
+         >
+        </ion-input>
+
+      </ion-item>
+      
+      <ion-item class="space">
+        <ion-icon name="calendar-clear-outline" (click)="eventCalendar()"></ion-icon>
+
+        <ion-input
+         label="Data de nascimento"
+         labelPlacement="stacked" 
+         type="text" 
+         id="date" 
+         name="date"
+         placeholder="DD/MM/AAAA"
+         [(ngModel)]="form.date"
+         [brmasker]="{mask:'00/00/0000', type: 'num', len:10}">
+        </ion-input>
+
+      </ion-item>
+
+    </ion-list>
+    
+    <ion-button class="space">Alterar</ion-button>
+
+  </form>
+
+</ion-content>

@@ -1,0 +1,59 @@
+<ion-content>
+
+  <div class="align-center-container">
+
+    <form>
+
+      <ion-img src="./assets/images/logo-completa.png"></ion-img>
+
+      <div class="texts">
+        <h2>LOGIN</h2>
+        <p>Bem vindo de volta!</p>
+        <p>Por favor entre com suas credenciais</p>
+      </div>
+
+      <ion-list>
+        
+        <ion-item>
+ 
+          <ion-input 
+           label="Usuário" 
+           labelPlacement="stacked" 
+           type="text" 
+           id="user" 
+           name="user"
+           placeholder="Insira seu usuário"
+           [(ngModel)]="form.username">
+          </ion-input>
+  
+        </ion-item>
+
+        <ion-item>
+ 
+          <ion-input 
+           label="Senha" 
+           labelPlacement="stacked" 
+           type="password" 
+           id="password" 
+           name="password"
+           placeholder="Insira sua senha"
+           [(ngModel)]="form.password">
+          </ion-input>
+  
+          <ion-icon id="iconPassword" name="eye-off-outline" (click)="toggleType('password', 'iconPassword')"></ion-icon>
+        </ion-item>
+
+        <div class="horizontal-line">
+          <ion-checkbox labelPlacement="end">Lembrar senha</ion-checkbox>
+          <p>Esqueci minha senha</p>
+        </div>
+        
+      </ion-list>
+
+      <ion-button (click)="login()" expand="block">Entrar</ion-button>
+
+    </form>
+
+  </div>
+
+</ion-content>

@@ -1,0 +1,111 @@
+ion-toolbar {
+    --background: #FFFFFF;
+    --border-color: #FFFFFF;
+    color: #000000;
+
+    ion-buttons ion-back-button {
+        color: #000000;
+    }
+
+    ion-title {
+        font-weight: 700;
+        font-size: 18px;
+
+        ion-icon {
+            margin: 0px 5px;
+        }
+    }
+}
+
+form {
+    width: 100%;
+    padding: 20px 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    ion-list {
+        width: 100%;
+    
+        border: none;
+        background: transparent;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+        ion-item {
+            width: 100%;
+    
+            --border-color: white;
+            --background: #FFFFFF;
+            border: 1px solid #D0D5DD;
+            border-radius: 6px  ;
+    
+            color: #000000;
+    
+            ion-icon {
+                margin: 0 5px;
+                color: #000000;
+            }
+    
+            ion-input {
+                margin-bottom: 5px;
+            }
+            
+        }
+    
+        .requirements {
+    
+            width: 100%;
+            padding: 0 6px;
+    
+            .item {
+                
+                width: 100%;
+                margin: 16px 0;
+    
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+    
+                ion-icon {
+                    font-size: 18px;
+                    color: #F04438;
+                }
+    
+                p {
+                    margin-left: 5px;
+                    color: #344054;
+                    line-height: 16px;
+                }
+    
+                .check {
+                    color: #1beb1b;
+                }
+    
+            }
+    
+        }
+    
+    }
+    
+    ion-button {
+        width: 85%;
+        --background: #FFFFFF;
+        --background-activated: #e6e6e6;
+        border-radius: 8px;
+        --border-radius: 8px;
+        --color: #000000;
+        text-transform: uppercase;
+        box-shadow: 0 2px 10px rgb(54, 54, 54);
+    }
+    
+    .space {
+        margin-top: 30px;
+    }
+
+}

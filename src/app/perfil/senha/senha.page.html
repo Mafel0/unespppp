@@ -1,0 +1,103 @@
+<ion-header mode="ios">
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+
+    <ion-title><ion-icon name="lock-closed-outline"></ion-icon>ALTERAR SENHA</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <form>
+
+    <ion-list>
+
+      <ion-item>
+        <ion-icon name="lock-closed-outline"></ion-icon>
+
+        <ion-input 
+         label="Senha" 
+         labelPlacement="stacked" 
+         type="password" 
+         id="password" 
+         name="password"
+         placeholder="Senha"
+         [(ngModel)]="form.password">
+        </ion-input>
+
+        <ion-icon id="iconPassword" name="eye-off-outline" (click)="toggleType('password', 'iconPassword')"></ion-icon>
+      </ion-item>
+
+      <ion-item  class="space">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        
+        <ion-input 
+         label="Nova senha"
+         labelPlacement="stacked"
+         id="newPassword"
+         name="newPassword"
+         type="password"
+         placeholder="Nova senha"
+         [(ngModel)]="form.newPassword"
+         (input)="verifyPassword()"
+         >
+        </ion-input>
+
+        <ion-icon id="iconNewPassword" name="eye-off-outline" (click)="toggleType('newPassword', 'iconNewPassword')"></ion-icon>
+      </ion-item>
+
+      <div class="requirements">
+
+        <div class="item">
+          <ion-icon *ngIf="!requirementsPassword.letters" name="close"></ion-icon>
+          <ion-icon *ngIf="requirementsPassword.letters" name="checkmark" class="check"></ion-icon>
+          <p>É necessário ter ao menos 8 caracteres</p>
+        </div>
+
+        <div class="item">
+          <ion-icon *ngIf="!requirementsPassword.uppercase" name="close"></ion-icon>
+          <ion-icon *ngIf="requirementsPassword.uppercase" name="checkmark" class="check"></ion-icon>
+          <p>É necessário ter ao menos 1 letra maiúscula</p>
+        </div>
+
+        <div class="item">
+          <ion-icon *ngIf="!requirementsPassword.number" name="close"></ion-icon>
+          <ion-icon *ngIf="requirementsPassword.number" name="checkmark" class="check"></ion-icon>
+          <p>É necessário ter ao menos 1 número</p>
+        </div>
+
+        <div class="item">
+          <ion-icon *ngIf="!requirementsPassword.special" name="close"></ion-icon>
+          <ion-icon *ngIf="requirementsPassword.special" name="checkmark" class="check"></ion-icon>
+          <p>É necessário ter ao menos 1 caractere especial</p>
+        </div>
+      
+      </div>
+
+      <ion-item class="space">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+
+        <ion-input
+         label="Confirme a nova senha"
+         labelPlacement="stacked" 
+         type="password" 
+         id="newPasswordRepeat" 
+         name="newPasswordRepeat"
+         placeholder="Confirme a nova senha"
+         [(ngModel)]="form.repeatPassword">
+        </ion-input>
+
+        <ion-icon id="iconPasswordRepeat" name="eye-off-outline" (click)="toggleType('newPasswordRepeat', 'iconPasswordRepeat')"></ion-icon>
+      </ion-item>
+
+    </ion-list>
+    
+    <ion-button class="space">Alterar</ion-button>
+
+  </form>
+
+</ion-content>
