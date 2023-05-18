@@ -16,3 +16,31 @@ ion-toolbar {
         }
     }
 }
+
+.formTermos {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+
+    ion-list {
+        width: 100%;
+        display: flex;
+        border: none;
+        background: transparent;
+
+        display: flex;
+
+        ion-item {
+            --background: #FFFFFF;
+            --border-color: #FFFFFF;
+            border: 1px solid #D0D5DD;
+            border-radius: 6px;
+
+            color: #000000;
+
+            .textTermos {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
