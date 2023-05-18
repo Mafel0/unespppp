@@ -215,7 +215,7 @@ main {
     .help {
         margin-top: -40px;
         
-        .container {
+        .tutorial-button {
             width: 40px;
             height: 40px;
 
@@ -226,6 +226,50 @@ main {
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+
+        .tutorial-button:before {
+            position: absolute;
+            z-index: 2;
+            display: inline-block;
+            width: 174px;
+            max-width: 174px;
+            padding: 10px;
+            line-height: 1.4;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            content: attr(title);
+            font-size: 16px;
+        }
+
+        .tutorial-button:after {
+            position: absolute;
+            z-index: 1;
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border: 5px solid transparent;
+            content: "";
+        }
+
+        .tutorial-button:hover:before,
+        .tutorial-button:hover:after {
+            display: none;
+        }
+
+        .tutorial-button:before {
+            top: 50%;
+            right: 45px;
+            transform: translateY(-50%);
+        }
+
+        .tutorial-button:after {
+            top: 50%;
+            right: 40px;
+            transform: translateY(-50%);
+            border-right-width: 0;
+            border-left-color: rgba(0, 0, 0, 0.8);
         }
 
     }
